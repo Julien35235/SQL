@@ -1,6 +1,6 @@
 -- MariaDB dump 10.19  Distrib 10.11.6-MariaDB, for debian-linux-gnu (x86_64)
 --
--- Host: localhost    Database: Drole
+-- Host: localhost    Database: SYSADMIN
 -- ------------------------------------------------------
 -- Server version	10.11.6-MariaDB-0ubuntu0.23.10.2
 
@@ -16,27 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `Blague`
+-- Table structure for table `Compagnie`
 --
 
-DROP TABLE IF EXISTS `Blague`;
+DROP TABLE IF EXISTS `Compagnie`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Blague` (
+CREATE TABLE `Compagnie` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `test` text DEFAULT NULL,
-  `REATING` float DEFAULT NULL,
+  `comp` char(4) DEFAULT NULL,
+  `nrue` int(3) DEFAULT NULL,
+  `rue` varchar(20) DEFAULT NULL,
+  `ville` varchar(15) DEFAULT 'Paris',
+  `nomComp` varchar(15) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Blague`
+-- Dumping data for table `Compagnie`
 --
 
-LOCK TABLES `Blague` WRITE;
-/*!40000 ALTER TABLE `Blague` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Blague` ENABLE KEYS */;
+LOCK TABLES `Compagnie` WRITE;
+/*!40000 ALTER TABLE `Compagnie` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Compagnie` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-03-25 17:01:47
+-- Dump completed on 2024-03-25 17:20:00

@@ -1,6 +1,6 @@
 -- MariaDB dump 10.19  Distrib 10.11.6-MariaDB, for debian-linux-gnu (x86_64)
 --
--- Host: localhost    Database: Buisiness
+-- Host: localhost    Database: Concours
 -- ------------------------------------------------------
 -- Server version	10.11.6-MariaDB-0ubuntu0.23.10.2
 
@@ -16,64 +16,72 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `CLIENTS`
+-- Table structure for table `Chevaux`
 --
 
-DROP TABLE IF EXISTS `CLIENTS`;
+DROP TABLE IF EXISTS `Chevaux`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CLIENTS` (
+CREATE TABLE `Chevaux` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nom` varchar(50) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL,
+  `Chevaux_id` int(11) DEFAULT NULL,
+  `Nom` varchar(150) DEFAULT NULL,
+  `Age` int(11) DEFAULT NULL,
+  `Races` varchar(150) DEFAULT NULL,
+  `Produits` varchar(500) DEFAULT NULL,
+  `Quantite` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `CLIENTS`
+-- Dumping data for table `Chevaux`
 --
 
-LOCK TABLES `CLIENTS` WRITE;
-/*!40000 ALTER TABLE `CLIENTS` DISABLE KEYS */;
-INSERT INTO `CLIENTS` VALUES
-(1,'Test','test.35235@gmail.com'),
-(2,'Juju','juju.despagne@gmail.com'),
-(3,'admin','admin@gmail.com'),
-(4,'root','root@gmail.com');
-/*!40000 ALTER TABLE `CLIENTS` ENABLE KEYS */;
+LOCK TABLES `Chevaux` WRITE;
+/*!40000 ALTER TABLE `Chevaux` DISABLE KEYS */;
+INSERT INTO `Chevaux` VALUES
+(1,NULL,'Coldplay EJ',10,'Palomino',NULL,NULL),
+(2,NULL,'Diaz USH',5,'Paso Fino',NULL,NULL),
+(3,NULL,'Good SKY de Pegase',8,'Percheron',NULL,NULL),
+(4,NULL,'Issabella',7,'Poitevin',NULL,NULL),
+(5,NULL,'Dusty',6,'Pur-Sang',NULL,NULL),
+(6,NULL,'Chez Pas',12,'Quarter Horse',NULL,NULL);
+/*!40000 ALTER TABLE `Chevaux` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Commandes`
+-- Table structure for table `Equipe`
 --
 
-DROP TABLE IF EXISTS `Commandes`;
+DROP TABLE IF EXISTS `Equipe`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Commandes` (
+CREATE TABLE `Equipe` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `CLIENTS_id` int(11) DEFAULT NULL,
-  `Produits` varchar(50) DEFAULT NULL,
-  `Quantite` int(11) DEFAULT NULL,
+  `Equipe_id` int(11) DEFAULT NULL,
+  `Nom` varchar(150) DEFAULT NULL,
+  `Age` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `CLIENTS_id` (`CLIENTS_id`),
-  CONSTRAINT `Commandes_ibfk_1` FOREIGN KEY (`CLIENTS_id`) REFERENCES `CLIENTS` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  KEY `Equipe_id` (`Equipe_id`),
+  CONSTRAINT `Equipe_ibfk_1` FOREIGN KEY (`Equipe_id`) REFERENCES `Equipe` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Commandes`
+-- Dumping data for table `Equipe`
 --
 
-LOCK TABLES `Commandes` WRITE;
-/*!40000 ALTER TABLE `Commandes` DISABLE KEYS */;
-INSERT INTO `Commandes` VALUES
-(1,1,'Clavier',98654),
-(2,2,'Souris',750965),
-(3,3,'PC',986549),
-(4,4,'Console',7509650);
-/*!40000 ALTER TABLE `Commandes` ENABLE KEYS */;
+LOCK TABLES `Equipe` WRITE;
+/*!40000 ALTER TABLE `Equipe` DISABLE KEYS */;
+INSERT INTO `Equipe` VALUES
+(1,NULL,'Admin',45),
+(2,NULL,'Root',50),
+(3,NULL,'Jean Pierre',35),
+(6,NULL,'Jean Michel',32),
+(7,NULL,'Pierre',30),
+(8,NULL,'Aude',29);
+/*!40000 ALTER TABLE `Equipe` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -85,4 +93,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-03-25 17:01:47
+-- Dump completed on 2024-03-25 17:20:00
